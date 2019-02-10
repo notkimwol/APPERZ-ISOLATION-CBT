@@ -1,6 +1,7 @@
 @import url('https://use.fontawesome.com/releases/v5.7.1/css/all.css');
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,400');
 $noto: 'NOTO SANS KR';
+$main-color: #0eb493;
 
 * {
     margin: 0;
@@ -12,6 +13,7 @@ body {
     font-family: $noto, sans-serif;
 }
 
+// Begin Main
 #main {
     width: 100%;
     height: 100vh;
@@ -72,3 +74,43 @@ body {
         }
     }
 }
+// End Main
+
+//Begin progress
+#progress {
+    .bar {
+        width: 100%;
+        height: 27px;
+        border-radius: 15px;
+        border: solid 3px $main-color;
+        background: $main-color;
+        display: flex;
+
+        .inner {
+            border-radius: 15px;
+            transition: .3s;
+            background: yellow;
+        }
+
+        .percent {
+            width: 0;
+            position: relative;
+            left: 47.5%;
+        }
+    }
+
+    .bar:not(.reverse) {
+        border: solid 3px #ddd;
+        background: #ddd;
+    }
+
+    .donate {
+
+    }
+
+    .project {
+        background-color: $main-color;
+        color: white;
+    }
+}
+//End progress

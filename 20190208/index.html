@@ -42,7 +42,23 @@
     <!-- End Favicon -->
 
     <!-- Begin jQuery & lazy load -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        //Begin Number Countup
+        jQuery(document).ready(function($) {
+            $('.counter').counterUp({
+                delay: 10,
+                time: 1000
+            });
+        });
+        //End Number Countup
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script src="jquery.counterup.min.js"></script>
+    <script src="jquery.countdown.min.js"></script>
     <!-- End jQuery & lazy load -->
 </head>
 
@@ -51,7 +67,7 @@
         <!-- 추후 작업 예정 -->
     </header>
 
-    <section id="main" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+    <section id="main" oncontextmenu="return false" ondragstart="return false" onselectstart="return false" style="display: none">
         <div class="top_left">
             <a href="https://apperz.co.kr"><img src="./img/apperz_logo.svg" alt="APPERZ"></a>
         </div>
@@ -75,7 +91,51 @@
                 <br>스토리 리듬게임 <b>ISOLATION</b></h1>
         </div>
     </section>
+    <section id="progress">
+        <div class="donate">
+            <h2>후원 진행률</h2>
+            <div class="bar reverse">
+                <span class="percent">
+                    15%
+                </span>
+                <div class="inner" style="width: 15%"></div>
+            </div>
 
+
+            <h4>후원 모금액 : <b class="counter">100,000</b>원</h4> <p>후원자 : <b class="counter">26</b>명</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem nulla natus aut, nam ullam excepturi, illum qui magni culpa nemo, tempore ducimus repudiandae odit, voluptate.</p>
+            <a href="#">텀블벅에서 후원하기</a>
+        </div>
+
+        <div class="project">
+            <h2>프로젝트 진행률</h2>
+            <div class="bar">
+                <span class="percent">
+                    95%
+                </span>
+                <div class="inner" style="width: 95%"></div>
+            </div>
+
+            <h4>프로젝트 종료까지 <span id="getting-started"></span></h4>
+            <script type="text/javascript">
+                $("#getting-started")
+                    .countdown("2020/01/01", function(event) {
+                    $(this).text(
+                        event.strftime('%D일 %H시간 %M분 %S초')
+                    );
+                });
+            </script>
+            <h4>참여 팀원 : XX명</h4>
+        </div>
+    </section>
+
+    <div id="crew">
+        <h2>참여한 팀원 목록</h2>
+    </div>
+
+    <footer>
+        <!-- 작업 예정 -->
+    </footer>
 </body>
 
 </html>

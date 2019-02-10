@@ -3,7 +3,7 @@
 $noto: 'NOTO SANS KR';
 $main-color: #0eb493;
 
-* {
+#main > * {
     margin: 0;
     padding: 0;
 
@@ -99,13 +99,45 @@ body {
         }
     }
 
+
+    h2 {
+        margin: 0 0 15px 0;
+    }
+
     .bar:not(.reverse) {
         border: solid 3px #ddd;
         background: #ddd;
     }
 
-    .donate {
+    .donate, .project {
+        padding: 25px 15px;
 
+        ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+
+            li:not(:last-child) {
+                margin-right: 15px;
+            }
+        }
+    }
+
+    .donate {
+        a {
+            text-decoration: none;
+            border: solid 1px $main-color;
+            border-radius: 25px;
+            background-color: $main-color;
+            color: white !important;
+            margin-top: 5px;
+            padding: 0px 10px;
+        }
+
+        p {
+            color: gray;
+            line-height: 1.3em;
+        }
     }
 
     .project {

@@ -43,9 +43,9 @@
 
     <!-- Begin jQuery & lazy load -->
     <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>
         //Begin Number Countup
         jQuery(document).ready(function($) {
@@ -56,9 +56,10 @@
         });
         //End Number Countup
     </script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
-    <script src="jquery.counterup.min.js"></script>
-    <script src="jquery.countdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.4/fullpage.min.css"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
     <!-- End jQuery & lazy load -->
 </head>
 
@@ -67,7 +68,8 @@
         <!-- 추후 작업 예정 -->
     </header>
 
-    <section id="main" oncontextmenu="return false" ondragstart="return false" onselectstart="return false" style="display: none">
+    <section id="main" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+        <div class="div"></div>
         <div class="top_left">
             <a href="https://apperz.co.kr"><img src="./img/apperz_logo.svg" alt="APPERZ"></a>
         </div>
@@ -92,9 +94,9 @@
         </div>
     </section>
     <section id="progress">
-        <div class="donate">
+        <div id="donate">
             <h2>후원 진행률</h2>
-            <div class="bar reverse">
+            <div class="bar">
                 <span class="percent">
                     15%
                 </span>
@@ -104,31 +106,42 @@
 
             <ul>
                 <li>후원 모금액 : <b class="counter">100,000</b> 원</li>
-                <li>후원자 : <b class="counter">27</b> 명</li>
+                <li class="donate_people">후원자 : <b class="counter">27</b> 명</li>
             </ul>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem nulla natus aut, nam ullam excepturi, illum qui magni culpa nemo, tempore ducimus repudiandae odit, voluptate.</p>
-            <a href="#">텀블벅에서 후원하기</a>
+            <p>
+                저희 청소년 개발팀 APPERZ는 2017년 4월 1일 APPERZ의 첫 프로젝트인 보드게임 오셀로를 출시한 뒤 청소년 개발팀이라는 이름에 맞게 청소년을 위한 콘텐츠를 제작해보고자 했습니다. 그렇게 팀원들끼리 모여 회의를 하던 중 "리듬게임을 만들어보자!"라는 이야기가 나오게 되었고 리듬게임의 스토리에 "청소년들에게 전하는 메시지를 담자!" 라는 아이디어를 떠올려 2017년 9월 28일부터 Isolation 프로젝트 개발에 착수하게 되었습니다.
+            </p>
+            <p>
+                APPERZ의 4번째 프로젝트 스토리형 리듬게임 Isolation은 곡을 완주함으로써 채영의 잃어버린 기억들을 수집하는 게임입니다. 곡 하나 하나에 의미가 담겨있고 각각의 스토리마다 채영의 과거와 케이와의 관계를 암시하는 단서들이 숨겨져 있습니다. 10개의 스테이지를 모두 클리어시 채영과 케이의 비밀들이 풀리게 됩니다. 그들의 비밀에는 Isolation 프로젝트 팀이 플레이어 여러분들께, 그리고 우리나라 청소년 모두에게 전하고자 하는 바가 담겨있기도 합니다.
+            </p>
+            <a href="https://tumblbug.com/apperz_isolation" title="텀블벅에서 후원하기" target="_blank">텀블벅에서 후원하기</a>
         </div>
 
-        <div class="project">
-            <h2>프로젝트 진행률</h2>
-            <div class="bar">
-                <span class="percent">
-                    95%
-                </span>
-                <div class="inner" style="width: 95%"></div>
-            </div>
+        <div id="project">
+            <div class="container">
+                <h2>프로젝트 진행률</h2>
+                <div class="bar reverse">
+                    <span class="percent" id="bar_text"></span>
+                    <div class="inner" id="bar_width" style="width: 0"></div>
+                </div>
 
-            <h4>프로젝트 종료까지 <span id="getting-started"></span></h4>
-            <script type="text/javascript">
-                $("#getting-started")
-                    .countdown("2020/01/01", function(event) {
-                    $(this).text(
-                        event.strftime('%D일 %H시간 %M분 %S초')
-                    );
-                });
-            </script>
-            <h4>참여 팀원 : XX명</h4>
+                <p>프로젝트 종료까지 <b id="donate_end"></b></p>
+                <script type="text/javascript">
+                    $("#donate_end")
+                        .countdown("2019/04/30", function(event) {
+                        $(this).text(
+                            event.strftime('%D일 %H시간 %M분 %S초')
+                        );
+                    });
+                </script>
+
+                <script type="text/javascript">
+                    var start = new Date(2017,9,28), end = new Date(2019,4,30), today = new Date(); var pcnt= Math.round(100-((end - start) * 100 ) / today);
+                    $('#bar_text').text(pcnt+'%');
+                    $('#bar_width').width(pcnt+'%');
+                </script>
+                <p>참여 팀원 : <b>9</b>명</p>
+            </div>
         </div>
     </section>
 

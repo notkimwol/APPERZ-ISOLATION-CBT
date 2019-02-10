@@ -3,14 +3,15 @@
 $noto: 'NOTO SANS KR';
 $main-color: #0eb493;
 
-#main > * {
+body {
     margin: 0;
     padding: 0;
-
+    font-family: $noto, sans-serif;
 }
 
-body {
-    font-family: $noto, sans-serif;
+// 공개 전 삭제 요망
+#main {
+    // display: none;
 }
 
 // Begin Main
@@ -28,9 +29,17 @@ body {
         left: 5%;
 
         img {
-            height: 10vh;
-            max-width: 200px;
+            width: 200px;
         }
+    }
+
+    .div {
+        border: solid 1px white;
+        width: 95%;
+        height: 95%;
+        position: absolute;
+        top: 2.5%;
+        right: 2.5%;
     }
 
     .top_right {
@@ -74,22 +83,22 @@ body {
         }
     }
 }
-// End Main
 
 //Begin progress
 #progress {
+    //Begin Progress Bar
     .bar {
         width: 100%;
         height: 27px;
         border-radius: 15px;
-        border: solid 3px $main-color;
-        background: $main-color;
+        border: solid 3px #ddd;
+        background: white;
         display: flex;
 
         .inner {
             border-radius: 15px;
             transition: .3s;
-            background: yellow;
+            background: linear-gradient(to right, #0C9A7E, #0FC19D);
         }
 
         .percent {
@@ -99,23 +108,26 @@ body {
         }
     }
 
-
-    h2 {
-        margin: 0 0 15px 0;
-    }
-
-    .bar:not(.reverse) {
+    .bar.reverse {
         border: solid 3px #ddd;
         background: #ddd;
     }
 
-    .donate, .project {
-        padding: 25px 15px;
+    // Gerenal Setting
+    h2 {
+        margin: 0 0 15px 0;
+    }
+
+
+    #donate, #project {
+        height: 100vh;
+        padding: 25px 20px;
 
         ul {
             list-style: none;
             display: flex;
             padding: 0;
+            margin: 15px 0 5px 0;
 
             li:not(:last-child) {
                 margin-right: 15px;
@@ -123,7 +135,7 @@ body {
         }
     }
 
-    .donate {
+    #donate {
         a {
             text-decoration: none;
             border: solid 1px $main-color;
@@ -131,18 +143,35 @@ body {
             background-color: $main-color;
             color: white !important;
             margin-top: 5px;
-            padding: 0px 10px;
+            padding: 5px 15px;
+        }
+
+        a:hover {
+            opacity: 0.7;
         }
 
         p {
             color: gray;
             line-height: 1.3em;
+            margin: 7.5px 0 20px 0;
         }
     }
 
-    .project {
+    #project {
         background-color: $main-color;
         color: white;
+
+        p {
+            margin: 5px 0;
+        }
     }
 }
-//End progress
+
+// Begin Crew
+#crew {
+    padding: 25px 20px;
+
+    h2 {
+        margin: 0 0 15px 0;
+    }
+}

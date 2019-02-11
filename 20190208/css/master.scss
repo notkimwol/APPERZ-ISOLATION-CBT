@@ -11,7 +11,7 @@ body {
 
 // 공개 전 삭제 요망
 #main {
-    // display: none;
+    display: none;
 }
 
 // Begin Main
@@ -171,7 +171,68 @@ body {
 #crew {
     padding: 25px 20px;
 
-    h2 {
-        margin: 0 0 15px 0;
+    .container {
+        display: flex;
+        justify-content: center;
     }
+
+        h2 {
+            margin: 0 0 15px 0;
+        }
+
+        .wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            float: left;
+
+            .crew {
+                position: relative;
+                float: left;
+                width: 150px;
+                height: 150px;
+                margin: 20px 10px;
+
+                .img {
+
+                    img {
+                        background-color: black;
+                        border-radius: 25px;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .hover {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 25px;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0,0,0,0.3);
+                    opacity: 0;
+                    transition: .3s;
+
+                    ul {
+                        padding: 0;
+                        list-style: none;
+
+                        li {
+                            color: white;
+                            margin: 2.5px 0;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+
+            .crew:hover {
+                .hover {
+                    opacity: 1;
+                }
+            }
+        }
 }

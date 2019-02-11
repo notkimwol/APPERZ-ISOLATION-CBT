@@ -115,11 +115,12 @@
                         );
                     });
 
-                    var now = 968999, end = 1140000;
-                    var pcnt= Math.round(now/end*100);
-                    $('#donate_text').text(pcnt+'%');
-                    $('#donate_counter').text(Number(now).toLocaleString());
-                    $('#donate_bar').width( pcnt+'%');
+                var now = 968999,
+                    end = 1140000;
+                var pcnt = Math.round(now / end * 100);
+                $('#donate_text').text(pcnt + '%');
+                $('#donate_counter').text(Number(now).toLocaleString());
+                $('#donate_bar').width(pcnt + '%');
             </script>
 
             <p>
@@ -143,15 +144,15 @@
 
                 <p>프로젝트 종료까지 <b id="project_end"></b></p>
                 <script type="text/javascript">
+                    // Project 타이머
                     $("#project_end")
                         .countdown("2019/04/30", function(event) {
                             $(this).text(
                                 event.strftime('%D일 %H시간 %M분 %S초')
                             );
                         });
-                </script>
 
-                <script type="text/javascript">
+                    // Project Bar Timmer
                     var start = new Date(2017, 9, 28),
                         end = new Date(2019, 4, 30),
                         today = new Date();
@@ -167,7 +168,44 @@
 
     <div id="crew">
         <h2>참여한 팀원 목록</h2>
+        <div class="container">
+            <div class="wrapper">
+                <div class="crew">
+                    <div class="img">
+                        <img src="http://placehold.it/500" alt="">
+                    </div>
+                    <div class="hover">
+                        <div class="wrapper">
+                            <ul>
+                                <li>이름</li>
+                                <li>직책</li>
+                                <li>작업</li>
+                                <li>링크</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="crew">
+                    <div class="img">
+                        <img src="http://placehold.it/500" alt="">
+                    </div>
+                    <div class="hover">
+                        <div class="wrapper">
+                            <ul>
+                                <li>이름</li>
+                                <li>직책</li>
+                                <li>작업</li>
+                                <li>링크</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
+
 
     <footer>
         <!-- 작업 예정 -->

@@ -94,44 +94,46 @@
     </section>
     <section id="progress">
         <div id="donate">
-            <h2>후원 진행률</h2>
-            <div class="bar">
-                <span class="percent" id="donate_text"></span>
-                <div class="inner" id="donate_bar" style="width: 0"></div>
+            <div class="container">
+                <h2>후원 진행률</h2>
+                <div class="bar">
+                    <span class="percent" id="donate_text"></span>
+                    <div class="inner" id="donate_bar" style="width: 0"></div>
+                </div>
+
+
+                <ul>
+                    <li>후원 모금액 : <b class="counter" id="donate_counter"></b> 원</li>
+                    <li class="donate_people">후원자 : <b class="counter">27</b> 명</li>
+                    <li>후원 종료까지 <b id="donate_end"></b></li>
+                </ul>
+
+                <script type="text/javascript">
+                    $("#donate_end")
+                        .countdown("2019/03/15", function(event) {
+                            $(this).text(
+                                event.strftime('%D일 %H시간')
+                            );
+                        });
+
+                    var now = 1099999,
+                        end = 1140000;
+                    var pcnt = Math.round(now / end * 100);
+                    $('#donate_text').text(pcnt + '%');
+                    $('#donate_counter').text(Number(now).toLocaleString());
+                    $('#donate_bar').width(pcnt + '%');
+                </script>
+
+                <p>
+                    저희 청소년 개발팀 APPERZ는 2017년 4월 1일 APPERZ의 첫 프로젝트인 보드게임 오셀로를 출시한 뒤 청소년 개발팀이라는 이름에 맞게 청소년을 위한 콘텐츠를 제작해보고자 했습니다. 그렇게 팀원들끼리 모여 회의를 하던 중 "리듬게임을 만들어보자!"라는 이야기가 나오게 되었고 리듬게임의 스토리에 "청소년들에게 전하는 메시지를 담자!" 라는 아이디어를 떠올려 2017년 9월 28일부터 Isolation
+                    프로젝트 개발에 착수하게 되었습니다.
+                </p>
+                <p>
+                    APPERZ의 4번째 프로젝트 스토리형 리듬게임 Isolation은 곡을 완주함으로써 채영의 잃어버린 기억들을 수집하는 게임입니다. 곡 하나 하나에 의미가 담겨있고 각각의 스토리마다 채영의 과거와 케이와의 관계를 암시하는 단서들이 숨겨져 있습니다. 10개의 스테이지를 모두 클리어시 채영과 케이의 비밀들이 풀리게 됩니다. 그들의 비밀에는 Isolation 프로젝트 팀이 플레이어 여러분들께, 그리고 우리나라 청소년
+                    모두에게 전하고자 하는 바가 담겨있기도 합니다.
+                </p>
+                <a href="https://tumblbug.com/apperz_isolation" title="텀블벅에서 후원하기" target="_blank">텀블벅에서 더 보기</a>
             </div>
-
-
-            <ul>
-                <li>후원 모금액 : <b class="counter" id="donate_counter"></b> 원</li>
-                <li class="donate_people">후원자 : <b class="counter">27</b> 명</li>
-                <li>후원 종료까지 <b id="donate_end"></b></li>
-            </ul>
-
-            <script type="text/javascript">
-                $("#donate_end")
-                    .countdown("2019/03/15", function(event) {
-                        $(this).text(
-                            event.strftime('%D일 %H시간')
-                        );
-                    });
-
-                var now = 968999,
-                    end = 1140000;
-                var pcnt = Math.round(now / end * 100);
-                $('#donate_text').text(pcnt + '%');
-                $('#donate_counter').text(Number(now).toLocaleString());
-                $('#donate_bar').width(pcnt + '%');
-            </script>
-
-            <p>
-                저희 청소년 개발팀 APPERZ는 2017년 4월 1일 APPERZ의 첫 프로젝트인 보드게임 오셀로를 출시한 뒤 청소년 개발팀이라는 이름에 맞게 청소년을 위한 콘텐츠를 제작해보고자 했습니다. 그렇게 팀원들끼리 모여 회의를 하던 중 "리듬게임을 만들어보자!"라는 이야기가 나오게 되었고 리듬게임의 스토리에 "청소년들에게 전하는 메시지를 담자!" 라는 아이디어를 떠올려 2017년 9월 28일부터 Isolation
-                프로젝트 개발에 착수하게 되었습니다.
-            </p>
-            <p>
-                APPERZ의 4번째 프로젝트 스토리형 리듬게임 Isolation은 곡을 완주함으로써 채영의 잃어버린 기억들을 수집하는 게임입니다. 곡 하나 하나에 의미가 담겨있고 각각의 스토리마다 채영의 과거와 케이와의 관계를 암시하는 단서들이 숨겨져 있습니다. 10개의 스테이지를 모두 클리어시 채영과 케이의 비밀들이 풀리게 됩니다. 그들의 비밀에는 Isolation 프로젝트 팀이 플레이어 여러분들께, 그리고 우리나라 청소년
-                모두에게 전하고자 하는 바가 담겨있기도 합니다.
-            </p>
-            <a href="https://tumblbug.com/apperz_isolation" title="텀블벅에서 후원하기" target="_blank">텀블벅에서 더 보기</a>
         </div>
 
         <div id="project">
@@ -167,49 +169,119 @@
     </section>
 
     <div id="crew">
-        <h2>참여한 팀원 목록</h2>
         <div class="container">
-            <div class="wrapper">
-                <div class="crew">
-                    <div class="img">
-                        <img src="http://placehold.it/500" alt="">
-                    </div>
-                    <div class="hover">
-                        <div class="wrapper">
-                            <ul>
-                                <li>이름</li>
-                                <li>직책</li>
-                                <li>작업</li>
-                                <li>링크</li>
-                            </ul>
+            <h2>참여한 팀원 목록</h2>
+                <div class="wrapper">
+                    <div class="crew">
+                        <div class="img">
+                            <img src="http://placehold.it/500" alt="">
+                        </div>
+                        <div class="hover">
+                            <div class="wrapper">
+                                <ul>
+                                    <li>이름</li>
+                                    <li>직책</li>
+                                    <li>작업</li>
+                                    <li>링크</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="crew">
-                    <div class="img">
-                        <img src="http://placehold.it/500" alt="">
-                    </div>
-                    <div class="hover">
-                        <div class="wrapper">
-                            <ul>
-                                <li>이름</li>
-                                <li>직책</li>
-                                <li>작업</li>
-                                <li>링크</li>
-                            </ul>
+                    <div class="crew">
+                        <div class="img">
+                            <img src="http://placehold.it/500" alt="">
+                        </div>
+                        <div class="hover">
+                            <div class="wrapper">
+                                <ul>
+                                    <li>이름</li>
+                                    <li>직책</li>
+                                    <li>작업</li>
+                                    <li>링크</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-
             </div>
         </div>
     </div>
 
 
     <footer>
-        <!-- 작업 예정 -->
+        <div class="container">
+            <div class="LOGO">
+                <a href="http://apperz.co.kr"><img src="img/apperz_logo.svg"></a>
+            </div>
+
+            <div class="sns">
+                <ul>
+                    <li><a href="https://facebook.com/teamapperz" target="_blank">
+                            <span class="fab fa-facebook icon" title="facebook"></span>
+                        </a></li>
+
+                    <li><a href="https://twitter.com/teamapperz" target="_blank">
+                            <span class="fab fa-twitter icon" title="twitter"></span>
+                        </a></li>
+
+                    <li><a href="https://www.youtube.com/channel/UCsUfGP5WwCNyaArKJdVBqpA" target="_blank">
+                            <span class="fab fa-youtube icon" title="youtube"></span>
+                        </a></li>
+
+                    <li><a href="https://github.com/apperz" target="_blank">
+                            <span class="fab fa-github icon" title="github"></span>
+                        </a></li>
+
+                    <li><a href="https://linkedin.com/company/apperz" target="_blank">
+                            <span class="fab fa-linkedin icon" title="linkedin"></span>
+                        </a></li>
+                </ul>
+            </div>
+
+            <div class="ccl">
+                <span>APPERZ 5th Project, ISOLATION, Made By <a href="http://kimwol.me" class="kimwol
+                    ">STUDIO KIMWOL</a></span>
+            </div>
+        </div>
     </footer>
+
+
+    <!-- <footer>
+        <div class="info">
+            <a href="http://apperz.co.kr"><img src="img/apperz_logo.svg" alt=""></a>
+        </div>
+
+        <div class="sns">
+
+        </div>
+        <nav class="sns">
+            <ul>
+                <li><a href="https://facebook.com/teamapperz" target="_blank">
+                        <span class="fab fa-facebook icon" title="facebook"></span>
+                    </a></li>
+
+                <li><a href="https://twitter.com/teamapperz" target="_blank">
+                        <span class="fab fa-twitter icon" title="twitter"></span>
+                    </a></li>
+
+                <li><a href="https://www.youtube.com/channel/UCsUfGP5WwCNyaArKJdVBqpA" target="_blank">
+                        <span class="fab fa-youtube icon" title="youtube"></span>
+                    </a></li>
+
+                <li><a href="https://github.com/apperz" target="_blank">
+                        <span class="fab fa-github icon" title="github"></span>
+                    </a></li>
+
+                <li><a href="https://linkedin.com/company/apperz" target="_blank">
+                        <span class="fab fa-linkedin icon" title="linkedin"></span>
+                    </a></li>
+            </ul>
+        </nav>
+        <div class="text">
+            <p>APPERZ 5th Project, ISOLATION, Made By <a href="http://kimwol.me" class="kimwol
+                ">STUDIO KIMWOL</a></p>
+        </div>
+    </footer> -->
 </body>
 
 </html>

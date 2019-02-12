@@ -8,13 +8,13 @@ body {
     padding: 0;
     font-family: $noto, sans-serif;
 }
-
 // 공개 전 삭제 요망
-#main {
-    // display: none;
-}
 
+#main {
+    display: none;
+}
 // Begin Main
+
 #main {
     width: 100%;
     height: 100vh;
@@ -56,7 +56,6 @@ body {
                 font-size: 2.73vw;
             }
         }
-
         @media screen and (min-width: 767px) {
             ul {
                 li {
@@ -75,7 +74,6 @@ body {
             font-size: 5vw;
             font-weight: 100;
         }
-
         @media screen and (min-width: 767px) {
             h1 {
                 font-size: 38.40px !important;
@@ -83,8 +81,8 @@ body {
         }
     }
 }
-
 //Begin progress
+
 #progress {
     //Begin Progress Bar
     .bar {
@@ -97,7 +95,7 @@ body {
 
         .inner {
             border-radius: 15px;
-            transition: .3s;
+            transition: 0.3s;
             background: linear-gradient(to right, #0C9A7E, #0FC19D);
         }
 
@@ -112,14 +110,18 @@ body {
         border: solid 3px #ddd;
         background: #ddd;
     }
-
     // Gerenal Setting
     h2 {
-        margin: 0 0 15px 0;
+        margin: 0 0 15px;
     }
 
+    #donate,
+    #project {
 
-    #donate, #project {
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
         // height: 100vh;
         padding: 25px 20px;
 
@@ -127,7 +129,7 @@ body {
             list-style: none;
             display: flex;
             padding: 0;
-            margin: 15px 0 5px 0;
+            margin: 15px 0 5px;
 
             li:not(:last-child) {
                 margin-right: 15px;
@@ -153,7 +155,7 @@ body {
         p {
             color: gray;
             line-height: 1.3em;
-            margin: 7.5px 0 20px 0;
+            margin: 7.5px 0 20px;
         }
     }
 
@@ -166,35 +168,32 @@ body {
         }
     }
 }
-
 // Begin Crew
+
 #crew {
-    display: none;
+    // display: none;
     padding: 25px 20px;
 
     .container {
-        display: flex;
-        justify-content: center;
-    }
+        max-width: 1000px;
+        margin: 0 auto;
 
         h2 {
-            margin: 0 0 15px 0;
+            margin: 0 0 15px;
         }
 
         .wrapper {
-            max-width: 1000px;
-            margin: 0 auto;
-            float: left;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
 
             .crew {
                 position: relative;
-                float: left;
                 width: 150px;
                 height: 150px;
                 margin: 20px 10px;
 
                 .img {
-
                     img {
                         background-color: black;
                         border-radius: 25px;
@@ -215,7 +214,7 @@ body {
                     height: 100%;
                     background: rgba(0,0,0,0.3);
                     opacity: 0;
-                    transition: .3s;
+                    transition: 0.3s;
 
                     ul {
                         padding: 0;
@@ -228,12 +227,131 @@ body {
                         }
                     }
                 }
-            }
 
-            .crew:hover {
-                .hover {
-                    opacity: 1;
+                .crew:hover {
+                    .hover {
+                        opacity: 1;
+                    }
                 }
             }
         }
+    }
 }
+
+    footer {
+        color: white;
+        background: $main-color;
+
+        .container {
+            padding: 20px 10px;
+
+            .LOGO {
+                img {
+                    width: 100%;
+                    max-width: 200px;
+                }
+            }
+
+            .sns {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+
+                ul {
+                    display: flex;
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+
+                    a {
+                        display: block;
+                        padding: 0;
+                        color: white;
+                        font-size: 16px;
+                        text-decoration: none;
+                        border: solid 1px white;
+                        width: 2em;
+                        line-height: 2em;
+                        border-radius: 50%;
+                        text-align: center;
+                        margin-right: 8px;
+                    }
+                }
+
+                a:hover {
+                    background-color: rgba(0,0,0,0.3);
+                }
+            }
+
+            .ccl {
+                margin-top: 10px;
+                font-size: 12px;
+                font-weight: 100;
+                text-align: center;
+
+                a {
+                    color: white;
+                    text-decoration: none;
+                }
+
+                a:hover {
+                    animation-duration: 3s;
+                    animation-name: rainbowLink;
+                    animation-iteration-count: infinite;
+                }
+                @keyframes rainbowLink {
+                    0% {
+                        color: #ff2a2a;
+                    }
+
+                    15% {
+                        color: #ff7a2a;
+                    }
+
+                    30% {
+                        color: #ffc52a;
+                    }
+
+                    45% {
+                        color: #43ff2a;
+                    }
+
+                    60% {
+                        color: #2a89ff;
+                    }
+
+                    75% {
+                        color: #202082;
+                    }
+
+                    90% {
+                        color: #6b2aff;
+                    }
+
+                    100% {
+                        color: #e82aff;
+                    }
+                }
+            }
+        }
+        @media screen and (min-width: 768px) {
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+
+            .LOGO {
+                flex: 0 0 40%;
+            }
+
+            .sns {
+                flex: 0 0 60%;
+            }
+
+            .ccl {
+                flex: 0 0 100%;
+            }
+        }
+    }

@@ -11,7 +11,7 @@ body {
 
 // 공개 전 삭제 요망
 #main {
-    display: none;
+    // display: none;
 }
 
 // Begin Main
@@ -169,6 +169,7 @@ body {
 
 // Begin Crew
 #crew {
+    display: none;
     padding: 25px 20px;
 
     .container {

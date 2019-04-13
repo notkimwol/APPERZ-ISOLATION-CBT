@@ -99,11 +99,6 @@
         </div>
     </div>
 
-    <div id="form">
-        <div class="container">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScFwSSVEQhsYBwJ4CnayR5SKrC6Zyjl2hsuK_g9W4ITibvHbA/viewform?embedded=true" width="640" height="1683" frameborder="0" marginheight="0" marginwidth="0">로드 중...</iframe>
-        </div>
-    </div>
     <section id="progress">
         <div id="donate">
             <div class="container">
@@ -116,19 +111,12 @@
 
                 <ul>
                     <li>후원 모금액 : <b class="counter" id="donate_counter"></b> 원</li>
-                    <li class="donate_people">후원자 : <b class="counter">27</b> 명</li>
-                    <li>후원 종료까지 <b id="donate_end"></b></li>
+                    <li class="donate_people">후원자 : <b class="counter">63</b> 명</li>
+                    <li>후원 종료!</li>
                 </ul>
 
                 <script type="text/javascript">
-                    $("#donate_end")
-                        .countdown("2019/03/15", function(event) {
-                            $(this).text(
-                                event.strftime('%D일 %H시간')
-                            );
-                        });
-
-                    var now = 1099999,
+                    var now = 1799999,
                         end = 1140000;
                     var pcnt = Math.round(now / end * 100);
                     $('#donate_text').text(pcnt + '%');
@@ -179,46 +167,6 @@
             </div>
         </div>
     </section>
-
-    <div id="crew">
-        <div class="container">
-            <h2>참여한 팀원 목록</h2>
-                <div class="wrapper">
-                    <div class="crew">
-                        <div class="img">
-                            <img src="http://placehold.it/500" alt="">
-                        </div>
-                        <div class="hover">
-                            <div class="wrapper">
-                                <ul>
-                                    <li>이름</li>
-                                    <li>직책</li>
-                                    <li>작업</li>
-                                    <li>링크</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="crew">
-                        <div class="img">
-                            <img src="http://placehold.it/500" alt="">
-                        </div>
-                        <div class="hover">
-                            <div class="wrapper">
-                                <ul>
-                                    <li>이름</li>
-                                    <li>직책</li>
-                                    <li>작업</li>
-                                    <li>링크</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-        </div>
-    </div>
-
 
     <footer>
         <div class="container">
